@@ -1,0 +1,29 @@
+﻿@model Car
+
+@{
+    ViewData["Title"] = "Delete Car";
+}
+
+<h1 class="display-6">Delete a car: </h1>
+
+<form asp-controller="car" asp-action="delete car" method="post">
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header">Deleting a car</div>
+    <div class="card-body">
+        <p class="card-text" style="font-weight:bold">ID: @Html.DisplayFor(model => model.CarId)</p>
+        <p class="card-text" style="font-weight:bold">BRAND: @Html.DisplayFor(model => model.CarBrand)</p>
+        <p class="card-text" style="font-weight:bold">NAME: @Html.DisplayFor(model => model.CarName)</p>
+        <p class="card-text" style="font-weight:bold">YEAR: @Html.DisplayFor(model => model.CarYear)</p>
+        <div class="row">
+            <div class="col">
+                    <button class="btn btn-outline-danger" type="submit" asp-controller="car" asp-action="deleteCar">Delete</button>
+            </div>
+                <div class="col">
+                    <a class="btn btn-outline-primary" asp-controller="car" asp-action="index">Home</a>
+                </div>
+        </div>
+        
+    </div>
+</div>
+</form>
+

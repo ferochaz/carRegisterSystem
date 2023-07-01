@@ -1,0 +1,21 @@
+﻿@model Car
+
+@{
+    ViewData["Title"] = "Car Details";
+}
+
+
+<h1 class="display-6">Car Details:</h1>
+
+
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header">Details</div>
+    <div class="card-body">
+        <p class="card-text" style="font-weight:bold">ID: @Html.DisplayFor(model => model.CarId)</p>
+        <p class="card-text" style="font-weight:bold">BRAND: @Html.DisplayFor(model => model.CarBrand)</p>
+        <p class="card-text" style="font-weight:bold">NAME: @Html.DisplayFor(model => model.CarName)</p>
+        <p class="card-text" style="font-weight:bold">YEAR: @Html.DisplayFor(model => model.CarYear)</p>
+    </div>
+    </div>
+
+    <a class="btn btn-outline-primary" asp-controller="car" asp-action="index">Home</a>

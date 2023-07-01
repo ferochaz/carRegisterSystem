@@ -1,0 +1,46 @@
+﻿@model Car
+@{
+    ViewData["Title"] = "Update Car register";
+}
+
+<h1 class="display-6">Update Car Register:</h1>
+<form asp-controller="Car" asp-action="updateCar">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <input type="hidden" asp-for="CarId"/>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+            <label for="carBrand">Car Brand: </label>
+            <input class="form-control" type="text" id="carBrand" asp-for="CarBrand" />
+        </div>
+
+        <div class="col">
+            <label for="carName">Car Name: </label>
+            <input class="form-control" type="text" id="carName" asp-for="CarName" />
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col col-md-2">
+            <label for="carYear">Car Year:(YYYY)</label>
+            <input class="form-control" type="number" min="1950" step="1" id="carYear" asp-for="CarYear" />
+        </div>
+
+        <div class="col">
+
+            <button class="btn btn-outline-danger" type="submit" style="margin-top:23px">Update Register</button>
+            <a class="btn btn-outline-primary" style="margin-top:23px ; margin-left:10px;" asp-controller="Car" asp-action="Index">Home</a>
+        </div>
+
+    </div>
+
+
+
+</form>

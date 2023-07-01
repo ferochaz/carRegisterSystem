@@ -1,0 +1,44 @@
+﻿@model Car
+
+@{
+
+    ViewData["Title"] = "New Car";
+    Layout = "_Layout";
+}
+
+<h1 class="display-6">Register New Car: </h1>
+
+<form method="post" asp-controller="Car" asp-action="postCar">
+
+    <div class="row">
+
+        <div class="col">
+            <label for="carBrand">Car Brand: </label>
+            <input class="form-control" type="text" id="carBrand" asp-for="CarBrand"/>
+        </div>
+        
+        <div class="col">
+        <label for="carName">Car Name: </label>
+        <input class="form-control" type="text" id="carName" asp-for="CarName"/>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col col-md-2">
+        <label for="carYear">Car Year:(YYYY)</label>
+        <input class="form-control" type="number" min="1950" step="1" id="carYear" asp-for="CarYear"/>
+        </div>
+
+        <div class="col">
+
+            <button class="btn btn-outline-success" type="submit" style="margin-top:23px">New Car</button>
+            <a class="btn btn-outline-primary" style="margin-top:23px ; margin-left:10px;" asp-controller="Car" asp-action="Index">Home</a>
+        </div>
+
+    </div>
+
+
+
+</form>
+

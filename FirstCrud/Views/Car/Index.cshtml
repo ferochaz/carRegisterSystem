@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Car>
+
+@{
+    ViewData["Title"] = "Cars list";
+    Layout = "_Layout";
+}
+
+<h2 class="display-5">Welcome,let's Start?</h2>
+<h3 class="display-6">Click the button bellow to register a new car</h3>
+
+<a asp-action="NewCar" class="btn btn-outline-primary">New Car</a>
+
+<h3 class="display-6" style="margin-top:50px;">Registered Cars until now:</h3>
+
+<div class="container-fluid">
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">CarId</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Name</th>
+            <th scope="col">Year</th>
+            <th scope="col">Transactions</th>
+        </tr>
+    </thead>
+    
+     <tbody>
+        @foreach(var item in Model)
+        {
+
+            <tr>
+                <th scope="row">@Html.DisplayFor(modelItem=>item.CarId)</th>
+                <td>@Html.DisplayFor(modelItem=>item.CarBrand)</td>
+                <td>@Html.DisplayFor(modelItem=>item.CarName)</td>
+                <td>@Html.DisplayFor(modelItem=>item.CarYear)</td>
+                <td>
+                        <a asp-controller="Car" asp-action="detailsCar" asp-route-id="@item.CarId" class="btn btn-info">Details</a>
+                        <a asp-controller="Car" asp-action="updateCar"  asp-route-id="@item.CarId" class="btn btn-warning">Update</a>
+                        <a asp-controller="Car" asp-action="deleteCar" asp-route-id="@item.CarId" class="btn btn-danger">Delete</a>
+                      
+                </td>
+            </tr>
+
+        }
+    </tbody>
+    </table>
+</div>
